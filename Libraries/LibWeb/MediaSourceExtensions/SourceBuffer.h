@@ -48,6 +48,10 @@ public:
     // https://w3c.github.io/media-source/#dom-sourcebuffer-buffered
     WebIDL::ExceptionOr<GC::Ref<HTML::TimeRanges>> buffered();
 
+    [[nodiscard]] GC::Ref<HTML::AudioTrackList> audio_tracks() const { return m_audio_tracks; }
+    [[nodiscard]] GC::Ref<HTML::VideoTrackList> video_tracks() const { return m_video_tracks; }
+    [[nodiscard]] GC::Ref<HTML::TextTrackList> text_tracks() const { return m_text_tracks; }
+
     void set_content_type(String const& type);
 
     // https://w3c.github.io/media-source/#addsourcebuffer-method
